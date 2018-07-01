@@ -34,7 +34,7 @@ module.exports = [
         referenceName: 'rightSpaceManager',
         moduleName: 'rightSpaceManager',
         line:
-            "const rightSpaceManager   = require('../../rightSpaceManager.js');"
+            "const rightSpaceManager =   require('../../rightSpaceManager.js');"
     },
     {
         referenceName: 'bothSpaceManager',
