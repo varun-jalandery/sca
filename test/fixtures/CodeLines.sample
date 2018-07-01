@@ -43,8 +43,8 @@ module.exports = [
             "const bothSpaceManager   =   require('../../bothSpaceManager.js');"
     },
     {
-        referenceName: 'bothSpaceManager',
-        moduleName: 'bothSpaceManager',
+        referenceName: 'leftSpaceManager',
+        moduleName: 'leftSpaceManager',
         line: "const leftSpaceManager   = require('../../leftSpaceManager.js');"
     },
     {

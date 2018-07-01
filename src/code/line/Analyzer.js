@@ -1,6 +1,6 @@
 class Analyzer {
     isModuleRequired(line, moduleName) {
-        return false;
+        return (new RegExp(`require(.)+${moduleName}`)).test(line);
     }
 
     getModuleReferenceName(line, moduleName) {
