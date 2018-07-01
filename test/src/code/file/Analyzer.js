@@ -13,32 +13,10 @@ describe('src/code/file/Analyzer', () => {
         fileAnalyzer = new FileAnalyzer(lines);
     });
 
-    it('getImportedName() should return correct module names', () => {
-        expect(fileAnalyzer.getImportedName('promotionsManager')).to.be.an(
-            'promotionsManger',
-            'promotionsManager is imported as promotionManger'
-        );
-
-        expect(fileAnalyzer.getImportedName('barManager')).to.be.an(
-            'barManager',
-            'barManager is imported as barManager'
-        );
-
-        expect(fileAnalyzer.getImportedName('aliceManager')).to.be.an(
-            'AliceManager',
-            'aliceManager is imported as AliceManager'
-        );
-
-        expect(fileAnalyzer.getImportedName('fooBazManager')).to.be.an(
-            'fooBazManager',
-            'fooBazManager is imported as fooBazManager'
-        );
-    });
-
     it('isModuleImportedInFile() should return true if module is imported', () => {
         expect(
-            fileAnalyzer.isModuleImportedInFile('promotionsManager')
-        ).to.equal(true, 'promotionsManager is imported, should return true');
+            fileAnalyzer.isModuleImportedInFile('promotionManager')
+        ).to.equal(true, 'promotionManager is imported, should return true');
 
         expect(fileAnalyzer.isModuleImportedInFile('bobManager')).to.equal(
             true,
@@ -57,7 +35,7 @@ describe('src/code/file/Analyzer', () => {
         expect(
             fileAnalyzer.isModuleImportedInFile('doesnNotExistManager')
         ).to.equal(
-            true,
+            false,
             'doesnNotExistManager is not imported, should return false'
         );
     });

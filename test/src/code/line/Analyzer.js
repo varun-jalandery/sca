@@ -4,7 +4,7 @@ const CodeLineFixtures = require('test/fixtures/CodeLines.sample');
 
 let lineAnalyzer = null;
 
-describe('src/code/file/Analyzer', () => {
+describe('src/code/line/Analyzer', () => {
     before(async () => {
         lineAnalyzer = new LineAnalyzer();
     });

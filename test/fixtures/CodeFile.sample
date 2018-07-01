@@ -3,7 +3,7 @@ var barManager = require('../../barManager.js');
 const fooBazManager=require('./fooBazManager');
 const bobManager=  require('./bobManager');
 const AliceManager  =  require('./aliceManager');
-const promotionsManger   =   require('../../promotionManager');
+const promotionManger   =   require('../../promotionManager');
 
 class Sample {
 

@@ -1,13 +1,14 @@
 const Scan = require('src/code/directory/Scan');
-const FileReader = require('src/code/file/Reader');
+const LineAnalyzer = require('src/code/line/Analyzer');
 
 class Analyzer {
     constructor(fileLines) {
         this.fileLines = fileLines;
+        this.lineAnalyzer = new LineAnalyzer();
     }
 
     isModuleImportedInFile(moduleName) {
-        return 'implementation missing';
+        return this.fileLines.some(line => this.lineAnalyzer.isModuleRequired(line, moduleName));
     }
 
     getModuleUsages(moduleName) {
