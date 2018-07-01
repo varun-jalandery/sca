@@ -1,0 +1,27 @@
+const fooManager = require('../../fooManager.js');
+var barManager = require('../../barManager.js');
+const fooBazManager=require('./fooBazManager');
+const bobManager=  require('./bobManager');
+const AliceManager  =  require('./aliceManager');
+const promotionsManger   =   require('../../promotionManager');
+
+class Sample {
+
+    test() {
+        barManager.getBarMethod();
+fooManager.getFooMethod();
+     fooManager.getSomeOtherFooMethod();
+    }
+
+
+    execute() {
+        barManager.getSomeOtherBarMethod();
+    }
+}
+
+ AliceManager.getAliceMethod();
+   AliceManager.getSomeOtherAliceMethod();bobManager.getBobMethod(); bobManager.getSomeOtherBobMethod();
+module.exports = Sample;
+
+promotionsManger.getPromotions();
+    promotionsManger.addPromotions();

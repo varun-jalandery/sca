@@ -1,0 +1,105 @@
+module.exports = [
+    {
+        referenceName: 'champManager',
+        moduleName: 'champManager',
+        line: "const champManager = require('../../champManager.js');"
+    },
+    {
+        referenceName: 'aliceManager',
+        moduleName: 'aliceManager',
+        line: "var aliceManager = require('../../aliceManager.js');"
+    },
+
+    {
+        referenceName: 'stickManager',
+        moduleName: 'stickManager',
+        line: "const stickManager=require('../../stickManager.js');"
+    },
+    {
+        referenceName: 'leftStickManager',
+        moduleName: 'leftStickManager',
+        line: "const leftStickManager= require('../../leftStickManager.js');"
+    },
+    {
+        referenceName: 'rightStickManager',
+        moduleName: 'rightStickManager',
+        line: "const rightStickManager =require('../../rightStickManager.js');"
+    },
+    {
+        referenceName: 'typoManager',
+        moduleName: 'typicalManager',
+        line: "const typoManager = require('../../typicalManager.js');"
+    },
+    {
+        referenceName: 'rightSpaceManager',
+        moduleName: 'rightSpaceManager',
+        line:
+            "const rightSpaceManager   = require('../../rightSpaceManager.js');"
+    },
+    {
+        referenceName: 'bothSpaceManager',
+        moduleName: 'bothSpaceManager',
+        line:
+            "const bothSpaceManager   =   require('../../bothSpaceManager.js');"
+    },
+    {
+        referenceName: 'bothSpaceManager',
+        moduleName: 'bothSpaceManager',
+        line: "const leftSpaceManager   = require('../../leftSpaceManager.js');"
+    },
+    {
+        referenceName: 'stickSpaceRightManager',
+        moduleName: 'stickSpaceRightManager',
+        line:
+            "const stickSpaceRightManager=  require('../../stickSpaceRightManager.js');"
+    },
+    {
+        referenceName: 'stickSpaceLeftManager',
+        moduleName: 'stickSpaceLeftManager',
+        line:
+            "const stickSpaceLeftManager  =require('../../stickSpaceLeftManager.js');"
+    },
+    {
+        referenceName: 'stickLessSpaceLeftManager',
+        moduleName: 'stickLessSpaceLeftManager',
+        line:
+            "const stickLessSpaceLeftManager= require('../../stickLessSpaceLeftManager.js');"
+    },
+    {
+        referenceName: 'stickRightSpaceLeftManager',
+        moduleName: 'stickRightSpaceLeftManager',
+        line:
+            "const stickRightSpaceLeftManager =require('../../stickRightSpaceLeftManager.js');"
+    },
+    {
+        referenceName: 'constSpaceRight',
+        moduleName: 'constSpaceRight',
+        line: "const    constSpaceRight = require('../../constSpaceRight.js');"
+    },
+    {
+        referenceName: 'constSpaceLeft',
+        moduleName: 'constSpaceLeft',
+        line: "   const constSpaceLeft = require('../../constSpaceLeft.js');"
+    },
+    {
+        referenceName: 'constSpaceSingleLeft',
+        moduleName: 'constSpaceSingleLeft',
+        line:
+            " const constSpaceSingleLeft = require('../../constSpaceSingleLeft.js');"
+    },
+    {
+        referenceName: 'varSpaceRight',
+        moduleName: 'varSpaceRight',
+        line: "const    varSpaceRight = require('../../varSpaceRight.js');"
+    },
+    {
+        referenceName: 'varSpaceLeft',
+        moduleName: 'varSpaceLeft',
+        line: "   const varSpaceLeft = require('../../varSpaceLeft.js');"
+    },
+    {
+        referenceName: 'varSpaceSingleLeft',
+        moduleName: 'varSpaceSingleLeft',
+        line:" const varSpaceSingleLeft = require('../../varSpaceSingleLeft.js');"
+    }
+];
