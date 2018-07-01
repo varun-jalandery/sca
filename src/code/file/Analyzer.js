@@ -6,10 +6,6 @@ class Analyzer {
         this.fileLines = fileLines;
     }
 
-    getImportedName(moduleName) {
-        return 'implementation missing';
-    }
-
     isModuleImportedInFile(moduleName) {
         return 'implementation missing';
     }
