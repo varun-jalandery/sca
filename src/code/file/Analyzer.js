@@ -11,7 +11,11 @@ class Analyzer {
         return this.fileLines.some(line => this.lineAnalyzer.isModuleRequired(line, moduleName));
     }
 
-    getModuleUsages(moduleReferenceName) {
+    getModuleUsages(moduleName) {
+        const moduleReferenceName = this.getModuleReferenceName(moduleName);
+        if (!moduleReferenceName) {
+            return [];
+        }
         let moduleUsages = [];
         this.fileLines.forEach(line => {
             let moduleUsagePerLine = this.lineAnalyzer.getModuleReferenceUsage(line, moduleReferenceName);
@@ -20,6 +24,15 @@ class Analyzer {
             }
         });
         return moduleUsages;
+    }
+
+    getModuleReferenceName(moduleName) {
+        for(let i = 0; i < this.fileLines.length; i += 1) {
+            if (this.lineAnalyzer.isModuleRequired(this.fileLines[i], moduleName)) {
+                return this.lineAnalyzer.getModuleReferenceName(this.fileLines[i]);
+            }
+        }
+        return '';
     }
 }
 
