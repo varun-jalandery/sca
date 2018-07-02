@@ -5,25 +5,29 @@ class Analyzer {
 
     getModuleReferenceName(line) {
         const initialMatches = line.match(
-            new RegExp('(var|const)\\s+[a-zA-z]+(\\s?|\\s+)\\=')
+            new RegExp('(((var|const)\\s+)|(\\s*))[a-zA-z]+(\\s*)\\=')
         );
         if (!initialMatches || !initialMatches[0]) {
             return '';
         }
 
         const beforeEqualToSignMatch = initialMatches[0].match(
-            new RegExp('\\s+[a-zA-z]+(\\=|(\\s?))')
+            new RegExp('((const|var)\\s+|\\s*)[a-zA-z]+(\\=?|(\\s?))')
         );
         if (!beforeEqualToSignMatch || !beforeEqualToSignMatch[0]) {
             return '';
         }
 
         const moduleReferenceNameMatch = beforeEqualToSignMatch[0].match(
-            new RegExp('[a-zA-Z]+')
+            new RegExp('[a-zA-Z]+\\=?$')
+
         );
 
         if (!moduleReferenceNameMatch || !moduleReferenceNameMatch[0]) {
             return '';
+        }
+        if (moduleReferenceNameMatch[0].endsWith('=')) {
+            return moduleReferenceNameMatch[0].slice(0, -1);
         }
         return moduleReferenceNameMatch[0];
     }
