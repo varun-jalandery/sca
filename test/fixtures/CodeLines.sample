@@ -101,5 +101,20 @@ module.exports = [
         referenceName: 'varSpaceSingleLeft',
         moduleName: 'varSpaceSingleLeft',
         line:" const varSpaceSingleLeft = require('../../varSpaceSingleLeft.js');"
+    },
+    {
+        referenceName: 'commaImport',
+        moduleName: 'commaImport',
+        line:"commaImport = require('../../commaImport.js');"
+    },
+    {
+        referenceName: 'commaImportSpace',
+        moduleName: 'commaImportSpace',
+        line:" commaImportSpace = require('../../commaImportSpace.js');"
+    },
+    {
+        referenceName: 'commaImportMoreSpace',
+        moduleName: 'commaImportMoreSpace',
+        line:"    commaImportMoreSpace = require('../../commaImportMoreSpace.js');"
     }
 ];

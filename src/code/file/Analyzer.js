@@ -8,7 +8,9 @@ class Analyzer {
     }
 
     isModuleImportedInFile(moduleName) {
-        return this.fileLines.some(line => this.lineAnalyzer.isModuleRequired(line, moduleName));
+        return this.fileLines.some(line =>
+            this.lineAnalyzer.isModuleRequired(line, moduleName)
+        );
     }
 
     getModuleUsages(moduleName) {
@@ -18,7 +20,10 @@ class Analyzer {
         }
         let moduleUsages = [];
         this.fileLines.forEach(line => {
-            let moduleUsagePerLine = this.lineAnalyzer.getModuleReferenceUsage(line, moduleReferenceName);
+            let moduleUsagePerLine = this.lineAnalyzer.getModuleReferenceUsage(
+                line,
+                moduleReferenceName
+            );
             if (moduleUsagePerLine.length) {
                 moduleUsages = moduleUsages.concat(moduleUsagePerLine);
             }
@@ -27,9 +32,16 @@ class Analyzer {
     }
 
     getModuleReferenceName(moduleName) {
-        for(let i = 0; i < this.fileLines.length; i += 1) {
-            if (this.lineAnalyzer.isModuleRequired(this.fileLines[i], moduleName)) {
-                return this.lineAnalyzer.getModuleReferenceName(this.fileLines[i]);
+        for (let i = 0; i < this.fileLines.length; i += 1) {
+            if (
+                this.lineAnalyzer.isModuleRequired(
+                    this.fileLines[i],
+                    moduleName
+                )
+            ) {
+                return this.lineAnalyzer.getModuleReferenceName(
+                    this.fileLines[i]
+                );
             }
         }
         return '';

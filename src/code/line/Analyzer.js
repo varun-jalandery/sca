@@ -32,7 +32,9 @@ class Analyzer {
         if (/require\(/.test(line)) {
             return [];
         }
-        let matches = line.match(new RegExp(`${moduleReference}\.[a-zA-Z0-9]+(\\(|\\n)`, 'g'));
+        let matches = line.match(
+            new RegExp(`${moduleReference}\.[a-zA-Z0-9]+(\\(|\\n)`, 'g')
+        );
         if (!matches || !matches[0]) {
             return [];
         }

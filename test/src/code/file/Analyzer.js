@@ -57,11 +57,13 @@ describe('src/code/file/Analyzer', () => {
 
         expect(fileAnalyzer.getModuleUsages('fooBazManager')).to.be.an('array');
 
-
         expect(fileAnalyzer.getModuleUsages('aliceManager'))
             .to.be.an('array', 'should be array of usages')
             .to.include.members(
-                ['AliceManager.getAliceMethod', 'AliceManager.getSomeOtherAliceMethod'],
+                [
+                    'AliceManager.getAliceMethod',
+                    'AliceManager.getSomeOtherAliceMethod'
+                ],
                 'AliceManager is calling methods getAliceMethod(), getSomeOtherAliceMethod()'
             );
 
@@ -75,28 +77,47 @@ describe('src/code/file/Analyzer', () => {
         expect(fileAnalyzer.getModuleUsages('promotionManager'))
             .to.be.an('array', 'should be array of usages')
             .to.include.members(
-                ['promotionManger.getPromotions', 'promotionManger.addPromotions'],
+                [
+                    'promotionManger.getPromotions',
+                    'promotionManger.addPromotions'
+                ],
                 'promotionManager is calling methods getPromotions(), addPromotions()'
             );
     });
 
     it('getModuleReferenceName() should return the imported name', () => {
-        expect(fileAnalyzer.getModuleReferenceName('aliceManager'))
-            .to.be.equal('AliceManager', 'aliceManager is imported as AliceManager');
+        expect(fileAnalyzer.getModuleReferenceName('aliceManager')).to.be.equal(
+            'AliceManager',
+            'aliceManager is imported as AliceManager'
+        );
 
-        expect(fileAnalyzer.getModuleReferenceName('promotionManager'))
-            .to.be.equal('promotionManger', 'promotionManager is imported as promotionManger');
+        expect(
+            fileAnalyzer.getModuleReferenceName('promotionManager')
+        ).to.be.equal(
+            'promotionManger',
+            'promotionManager is imported as promotionManger'
+        );
 
-        expect(fileAnalyzer.getModuleReferenceName('bobManager'))
-            .to.be.equal('bobManager', 'bobManager is imported as bobManager');
+        expect(fileAnalyzer.getModuleReferenceName('bobManager')).to.be.equal(
+            'bobManager',
+            'bobManager is imported as bobManager'
+        );
 
-        expect(fileAnalyzer.getModuleReferenceName('barManager'))
-            .to.be.equal('barManager', 'barManager is imported as barManager');
+        expect(fileAnalyzer.getModuleReferenceName('barManager')).to.be.equal(
+            'barManager',
+            'barManager is imported as barManager'
+        );
 
-        expect(fileAnalyzer.getModuleReferenceName('fooBazManager'))
-            .to.be.equal('fooBazManager', 'fooBazManager is imported as fooBazManager');
+        expect(
+            fileAnalyzer.getModuleReferenceName('fooBazManager')
+        ).to.be.equal(
+            'fooBazManager',
+            'fooBazManager is imported as fooBazManager'
+        );
 
-        expect(fileAnalyzer.getModuleReferenceName('barManager'))
-            .to.be.equal('barManager', 'barManager is imported as barManager');
+        expect(fileAnalyzer.getModuleReferenceName('barManager')).to.be.equal(
+            'barManager',
+            'barManager is imported as barManager'
+        );
     });
 });

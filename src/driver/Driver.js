@@ -5,10 +5,7 @@ const FileAnalyzer = require('src/code/file/Analyzer');
 const LineAnalyzer = require('src/code/line/Analyzer');
 
 class Driver {
-
-
     async drive(modules = null, scanDir = null) {
-
         if (!modules) {
             modules = this.getModulesToCheck();
         }
@@ -25,11 +22,11 @@ class Driver {
             const lines = await fileReader.getLines(files[i]);
             fileAnalyzer = new FileAnalyzer(lines);
             modules.forEach(el => {
-               const uses = fileAnalyzer.getModuleUsages(el);
-               if (uses.length) {
-                   console.log('\n', files[i]);
-                   console.log('\t' + uses.join('\n\t'));
-               }
+                const uses = fileAnalyzer.getModuleUsages(el);
+                if (uses.length) {
+                    console.log('\n', files[i]);
+                    console.log('\t' + uses.join('\n\t'));
+                }
             });
         }
     }
@@ -40,7 +37,6 @@ class Driver {
         }
         const modules = process.env.MODULES;
         return modules.split(',');
-
     }
 
     getScanDir() {
