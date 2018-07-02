@@ -1,25 +1,23 @@
 require('dotenv').config();
 
-const RecursiveScan = require('src/RecursiveScan');
-const ClassAnalyzer = require('src/ClassAnaylzer');
+const Driver = require('src/driver/Driver');
 
 class Main {
     static async execute() {
         try {
-            const files = await new RecursiveScan(
-                '/Users/varunjalandery/sites/mycode/liberty-cms/src/promotions/manager'
-            ).getFilesList();
-            console.log(files);
-            const classAnalyzer = new ClassAnalyzer();
-            files.forEach(file => {
-                classAnalyzer
-                    .getFileContents(file)
-                    .then(data => console.log(data))
-                    .catch(err => console.error(err));
-            });
+            const driver = new Driver();
+            driver.drive([Main.getModuleNames()]);
         } catch (ex) {
             console.error(ex);
         }
+    }
+
+    static getModuleNames() {
+        let moduleNames = null;
+        if (process.argv.length > 2) {
+            moduleNames = process.argv[2];
+        }
+        return moduleNames;
     }
 }
 
