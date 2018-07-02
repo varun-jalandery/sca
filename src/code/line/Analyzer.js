@@ -27,5 +27,16 @@ class Analyzer {
         }
         return moduleReferenceNameMatch[0];
     }
+
+    getModuleReferenceUsage(line, moduleReference) {
+        if (/require\(/.test(line)) {
+            return [];
+        }
+        let matches = line.match(new RegExp(`${moduleReference}\.[a-zA-Z0-9]+(\\(|\\n)`, 'g'));
+        if (!matches || !matches[0]) {
+            return [];
+        }
+        return matches.map(match => match.slice(0, -1));
+    }
 }
 module.exports = Analyzer;

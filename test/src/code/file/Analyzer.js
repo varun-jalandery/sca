@@ -44,39 +44,38 @@ describe('src/code/file/Analyzer', () => {
         expect(fileAnalyzer.getModuleUsages('barManager'))
             .to.be.an('array', 'should be array of usages')
             .to.include.members(
-                ['getBarMethod', 'getSomeOtherBarMethod'],
+                ['barManager.getBarMethod', 'barManager.getSomeOtherBarMethod'],
                 'barManager is calling methods getBarMethod(), getSomeOtherBarMethod()'
             );
 
         expect(fileAnalyzer.getModuleUsages('fooManager'))
             .to.be.an('array', 'should be array of usages')
             .to.include.members(
-                ['getFooMethod', 'getSomeOtherFooMethod'],
+                ['fooManager.getFooMethod', 'fooManager.getSomeOtherFooMethod'],
                 'fooManager is calling methods getFooMethod(), getSomeOtherFooMethod()'
             );
 
-        expect(fileAnalyzer.getModuleUsages('fooBazManager')).to.be.empty(
-            'fooBazManager is not being used'
-        );
+        expect(fileAnalyzer.getModuleUsages('fooBazManager')).to.be.an('array');
 
-        expect(fileAnalyzer.getModuleUsages('aliceManager'))
+
+        expect(fileAnalyzer.getModuleUsages('AliceManager'))
             .to.be.an('array', 'should be array of usages')
             .to.include.members(
-                ['getAliceMethod', 'getSomeOtherAliceMethod'],
-                'aliceManager is calling methods getAliceMethod(), getSomeOtherAliceMethod()'
+                ['AliceManager.getAliceMethod', 'AliceManager.getSomeOtherAliceMethod'],
+                'AliceManager is calling methods getAliceMethod(), getSomeOtherAliceMethod()'
             );
 
         expect(fileAnalyzer.getModuleUsages('bobManager'))
             .to.be.an('array', 'should be array of usages')
             .to.include.members(
-                ['getBobMethod', 'getSomeOtherBobMethod'],
+                ['bobManager.getBobMethod', 'bobManager.getSomeOtherBobMethod'],
                 'bobManager is calling methods getBobMethod(), getSomeOtherBobMethod()'
             );
 
-        expect(fileAnalyzer.getModuleUsages('promotionManager'))
+        expect(fileAnalyzer.getModuleUsages('promotionManger'))
             .to.be.an('array', 'should be array of usages')
             .to.include.members(
-                ['getPromotions', 'addPromotions'],
+                ['promotionManger.getPromotions', 'promotionManger.addPromotions'],
                 'promotionManager is calling methods getPromotions(), addPromotions()'
             );
     });

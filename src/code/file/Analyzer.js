@@ -11,8 +11,15 @@ class Analyzer {
         return this.fileLines.some(line => this.lineAnalyzer.isModuleRequired(line, moduleName));
     }
 
-    getModuleUsages(moduleName) {
-        return ['implementation missing'];
+    getModuleUsages(moduleReferenceName) {
+        let moduleUsages = [];
+        this.fileLines.forEach(line => {
+            let moduleUsagePerLine = this.lineAnalyzer.getModuleReferenceUsage(line, moduleReferenceName);
+            if (moduleUsagePerLine.length) {
+                moduleUsages = moduleUsages.concat(moduleUsagePerLine);
+            }
+        });
+        return moduleUsages;
     }
 }
 

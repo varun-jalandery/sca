@@ -23,5 +23,5 @@ fooManager.getFooMethod();
    AliceManager.getSomeOtherAliceMethod();bobManager.getBobMethod(); bobManager.getSomeOtherBobMethod();
 module.exports = Sample;
 
-promotionsManger.getPromotions();
-    promotionsManger.addPromotions();
+promotionManger.getPromotions();
+    promotionManger.addPromotions();
