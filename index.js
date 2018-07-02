@@ -6,16 +6,16 @@ class Main {
     static async execute() {
         try {
             const driver = new Driver();
-            driver.drive([Main.getModuleNames()]);
+            driver.drive(Main.getModuleNames());
         } catch (ex) {
             console.error(ex);
         }
     }
 
     static getModuleNames() {
-        let moduleNames = null;
+        let moduleNames = [];
         if (process.argv.length > 2) {
-            moduleNames = process.argv[2];
+            moduleNames = [process.argv[2]];
         }
         return moduleNames;
     }

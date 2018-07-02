@@ -20,7 +20,6 @@ class Analyzer {
 
         const moduleReferenceNameMatch = beforeEqualToSignMatch[0].match(
             new RegExp('[a-zA-Z]+\\=?$')
-
         );
 
         if (!moduleReferenceNameMatch || !moduleReferenceNameMatch[0]) {

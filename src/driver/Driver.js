@@ -5,10 +5,11 @@ const FileAnalyzer = require('src/code/file/Analyzer');
 const LineAnalyzer = require('src/code/line/Analyzer');
 
 class Driver {
-    async drive(modules = null, scanDir = null) {
-        if (!modules) {
+    async drive(modules = [], scanDir = null) {
+        if (!modules.length) {
             modules = this.getModulesToCheck();
         }
+
         if (!scanDir) {
             scanDir = this.getScanDir();
         }
