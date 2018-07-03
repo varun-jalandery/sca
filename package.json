@@ -7,6 +7,8 @@
     "start": "NODE_PATH=. node index",
     "test": "NODE_PATH=. NODE_ENV=test mocha --recursive",
     "test:coverage": "NODE_PATH=. NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --colors --reporter spec test/",
+    "lint": "eslint --ext=.js src/* test/src/*",
+    "lint:fix": "eslint --ext=.js src/* test/src/* --fix",
     "format": "find ./ -name '*.js' | xargs ./node_modules/prettier/bin-prettier.js --write"
   },
   "author": "Varun Jalandery <varun.jalandery@gmail.com>",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^5.0.1",
     "istanbul": "^1.1.0-alpha.1",
     "karma": "^2.0.4",
     "karma-coverage": "^1.1.2",
