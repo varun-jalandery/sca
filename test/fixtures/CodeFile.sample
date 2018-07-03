@@ -18,7 +18,7 @@ fooManager.getFooMethod();
         barManager.getSomeOtherBarMethod();
     }
 }
-
+AliceManagerGet.notAnAliceMethod();
  AliceManager.getAliceMethod();
    AliceManager.getSomeOtherAliceMethod();bobManager.getBobMethod(); bobManager.getSomeOtherBobMethod();
 module.exports = Sample;

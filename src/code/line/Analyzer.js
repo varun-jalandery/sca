@@ -1,6 +1,7 @@
 class Analyzer {
     isModuleRequired(line, moduleName) {
-        return new RegExp(`require\\s*\\((.)+${moduleName}(\\.js)?\\'\\s*\\)`).test(line);
+        // return new RegExp(`require\\s*\\((.)+${moduleName}(\\.js)?\\'\\s*\\)`).test(line);
+        return  new RegExp(`require\\s*\\((.)+${moduleName}(\\.js)?\\'\\s*\\)`).test(line);
     }
 
     getModuleReferenceName(line) {
@@ -36,12 +37,12 @@ class Analyzer {
             return [];
         }
         let matches = line.match(
-            new RegExp(`${moduleReference}\.[a-zA-Z0-9]+(\\(|\\n)`, 'g')
+            new RegExp(`\\s*${moduleReference}\\.[a-zA-Z0-9]+(\\(|\\n)`, 'g')
         );
         if (!matches || !matches[0]) {
             return [];
         }
-        return matches.map(match => match.slice(0, -1));
+        return matches.map(match => match.slice(0, -1).trim());
     }
 }
 module.exports = Analyzer;
