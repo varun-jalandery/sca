@@ -8,14 +8,12 @@
     "test": "NODE_PATH=. NODE_ENV=test mocha --recursive",
     "test:coverage": "NODE_PATH=. NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --colors --reporter spec test/",
     "lint": "eslint --ext=.js src/* test/src/*",
-    "lint:fix": "eslint --ext=.js src/* test/src/* --fix",
-    "format": "find ./ -name '*.js' | xargs ./node_modules/prettier/bin-prettier.js --write"
+    "lint:fix": "eslint --ext=.js src/* test/src/* --fix"
   },
   "author": "Varun Jalandery <varun.jalandery@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.0.0",
-    "prettier": "1.13.6",
     "recursive-readdir": "^2.2.2"
   },
   "devDependencies": {
