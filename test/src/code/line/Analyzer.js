@@ -31,6 +31,15 @@ describe('src/code/line/Analyzer', () => {
         );
     });
 
+    it('isModuleRequired() should return false if module is not required in line', () => {
+        expect(
+            lineAnalyzer.isModuleRequired("const coreOne = require('coreOneTwo');", 'coreOne')
+        ).to.equal(
+            false,
+            `coreOne is not required, so it should return false`
+        );
+    });
+
     it('getModuleReferenceName() should return correct module reference name', () => {
         CodeLineFixtures.forEach(fixture => {
             expect(
@@ -45,14 +54,5 @@ describe('src/code/line/Analyzer', () => {
                 }> in line <${fixture.line}>, so it should return true`
             );
         });
-    });
-
-    it('getModuleReferenceName() should not return module reference name in case of partial match', () => {
-        expect(lineAnalyzer.getModuleReferenceName(
-            "const coreOne = require('../../../coreOneTwo');",
-            "coreOne"
-        )).to.equal(
-            '', "coreOne is not imported as <const coreOne = require('../../../coreOneTwo');>"
-        );
     });
 });

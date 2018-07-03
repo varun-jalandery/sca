@@ -1,0 +1,1 @@
+./sca $1 > ~/Desktop/gencoup/$1.txt

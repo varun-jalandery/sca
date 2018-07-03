@@ -116,5 +116,5 @@ module.exports = [
         referenceName: 'commaImportMoreSpace',
         moduleName: 'commaImportMoreSpace',
         line:"    commaImportMoreSpace = require('../../commaImportMoreSpace.js');"
-    }
+    },
 ];
