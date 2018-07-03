@@ -46,4 +46,13 @@ describe('src/code/line/Analyzer', () => {
             );
         });
     });
+
+    it('getModuleReferenceName() should not return module reference name in case of partial match', () => {
+        expect(lineAnalyzer.getModuleReferenceName(
+            "const coreOne = require('../../../coreOneTwo');",
+            "coreOne"
+        )).to.equal(
+            '', "coreOne is not imported as <const coreOne = require('../../../coreOneTwo');>"
+        );
+    });
 });
