@@ -1,4 +1,3 @@
-const Scan = require('src/code/directory/Scan');
 const LineAnalyzer = require('src/code/line/Analyzer');
 
 class Analyzer {

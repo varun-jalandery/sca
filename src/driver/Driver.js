@@ -2,7 +2,6 @@ const fs = require('fs');
 const Scan = require('src/code/directory/Scan');
 const FileReader = require('src/code/file/Reader');
 const FileAnalyzer = require('src/code/file/Analyzer');
-const LineAnalyzer = require('src/code/line/Analyzer');
 
 class Driver {
 	async drive(modules = [], scanDir = null) {
@@ -25,8 +24,8 @@ class Driver {
 			modules.forEach(el => {
 				const uses = fileAnalyzer.getModuleUsages(el);
 				if (uses.length) {
-					console.log('\n', files[i]);
-					console.log('\t' + uses.join('\n\t'));
+					process.stdout.write('\n', files[i]);
+					process.stdout.write('\t' + uses.join('\n\t'));
 				}
 			});
 		}
