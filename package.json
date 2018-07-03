@@ -10,6 +10,10 @@
     "lint": "eslint --ext=.js src/* test/src/*",
     "lint:fix": "eslint --ext=.js src/* test/src/* --fix"
   },
+  "pre-commit": [
+    "test",
+    "lint"
+  ],
   "author": "Varun Jalandery <varun.jalandery@gmail.com>",
   "license": "ISC",
   "dependencies": {
