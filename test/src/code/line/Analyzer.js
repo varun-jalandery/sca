@@ -33,23 +33,26 @@ describe('src/code/line/Analyzer', () => {
 
     it('isModuleRequired() should return false if module is not required in line (partialMatch)', () => {
         expect(
-            lineAnalyzer.isModuleRequired("const coreOne = require('coreOneTwo');", 'coreOne')
-        ).to.equal(
-            false,
-            `coreOne is not required, so it should return false`
-        );
+            lineAnalyzer.isModuleRequired(
+                "const coreOne = require('coreOneTwo');",
+                'coreOne'
+            )
+        ).to.equal(false, `coreOne is not required, so it should return false`);
     });
 
     it('getModuleReferenceUsage() should return correct usage (partial match)', () => {
         expect(
-            lineAnalyzer.getModuleReferenceUsage("aliceGet.get('customers', " +
-                "req.gid alice.getAlice(), (allowed) => {", 'alice')
+            lineAnalyzer.getModuleReferenceUsage(
+                "aliceGet.get('customers', " +
+                    'req.gid alice.getAlice(), (allowed) => {',
+                'alice'
+            )
         )
-        .to.be.an('array', 'should be array of usages')
-        .to.include.members(
-            ['alice.getAlice'],
-            'alice module is calling get and set methods'
-        );
+            .to.be.an('array', 'should be array of usages')
+            .to.include.members(
+                ['alice.getAlice'],
+                'alice module is calling get and set methods'
+            );
     });
 
     it('getModuleReferenceName() should return correct module reference name', () => {

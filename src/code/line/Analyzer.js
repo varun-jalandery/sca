@@ -1,7 +1,9 @@
 class Analyzer {
     isModuleRequired(line, moduleName) {
         // return new RegExp(`require\\s*\\((.)+${moduleName}(\\.js)?\\'\\s*\\)`).test(line);
-        return  new RegExp(`require\\s*\\((.)+${moduleName}(\\.js)?\\'\\s*\\)`).test(line);
+        return new RegExp(
+            `require\\s*\\((.)+${moduleName}(\\.js)?\\'\\s*\\)`
+        ).test(line);
     }
 
     getModuleReferenceName(line) {

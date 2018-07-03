@@ -91,7 +91,9 @@ describe('src/code/file/Analyzer', () => {
             'aliceManager is imported as AliceManager'
         );
 
-        expect(fileAnalyzer.getModuleReferenceName('promotionManager')).to.be.equal(
+        expect(
+            fileAnalyzer.getModuleReferenceName('promotionManager')
+        ).to.be.equal(
             'promotionManger',
             'promotionManager is imported as promotionManger'
         );
@@ -106,7 +108,9 @@ describe('src/code/file/Analyzer', () => {
             'barManager is imported as barManager'
         );
 
-        expect(fileAnalyzer.getModuleReferenceName('fooBazManager')).to.be.equal(
+        expect(
+            fileAnalyzer.getModuleReferenceName('fooBazManager')
+        ).to.be.equal(
             'fooBazManager',
             'fooBazManager is imported as fooBazManager'
         );
