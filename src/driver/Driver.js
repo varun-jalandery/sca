@@ -24,11 +24,12 @@ class Driver {
 			modules.forEach(el => {
 				const uses = fileAnalyzer.getModuleUsages(el);
 				if (uses.length) {
-					process.stdout.write('\n', files[i]);
-					process.stdout.write('\t' + uses.join('\n\t'));
+					process.stdout.write('\n\n' + files[i]);
+					process.stdout.write('\n\n\t' + uses.join('\n\t'));
 				}
 			});
 		}
+		process.stdout.write('\n');
 	}
 
 	getModulesToCheck() {
